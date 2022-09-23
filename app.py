@@ -67,6 +67,17 @@ def divi_function():
 
     print("Your result is: ", result, "\n")
 
+def continue_using_calc():
+    use_again = input("\nWanna use the calculator again? y/n\n")
+
+    if (use_again == "y" or use_again == "Y"):
+        return True
+    elif (use_again == "n" or use_again == "Y"):
+        print("Thank you for using my calculator.")
+        return False
+    else:
+        print("Please, type y for yes or n for no.")
+        continue_using_calc()
 
 def input_selection():
     print("\nWelcome to the simple calculator, please select from the following options:\n")
@@ -84,25 +95,17 @@ def input_selection():
 
     if (selection == 1.0):
         add_function()
-        use_again = input("\nWanna use the calculator again? y/n\n")
     elif (selection == 2.0):
         sub_function()
-        use_again = input("\nWanna use the calculator again? y/n\n")
     elif (selection == 3.0):
         multi_function()
-        use_again = input("\nWanna use the calculator again? y/n\n")
     elif (selection == 4.0):
         divi_function()
-        use_again = input("\nWanna use the calculator again? y/n\n")
     else:
         print("Please, enter a number between 1 to 4.\n")
         input_selection()
 
-    if (use_again == "y" or use_again == "Y"):
-        return True
-    elif (use_again == "n" or use_again == "Y"):
-        print("Thank you for using my calculator.")
-        return False
+    return continue_using_calc()
 
 
 use_again = input_selection()
